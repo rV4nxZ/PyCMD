@@ -1,2 +1,2 @@
-# Python Command Line Console For Terminal With Commands
+# Python Command Line For Console
 good
