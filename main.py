@@ -51,7 +51,7 @@ class Main():
         elif self.command == "exit":
             pass
         elif not self.command.strip():
-            pass  # No action for empty input (just Enter pressed)
+            pass
         elif any(c.isspace() for c in self.command):
             print(f"ERROR: Invalid command \"{self.command}\".")
         else:
