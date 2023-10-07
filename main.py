@@ -8,6 +8,7 @@ class Main():
         super().__init__()
         self.math_pattern = re.compile(r'^\s*\d+(\.\d+)?(\s*[\+\-\*/]\s*\d+(\.\d+)?)*\s*$')
         self.user = os.getenv("USERNAME")
+        self.pc = os.getenv("COMPUTERNAME")
         with open('commandList.json', 'r') as file:
             self.command_functions = json.load(file)
         os.system("cls")
@@ -15,7 +16,7 @@ class Main():
     def run(self):
         while True:
             try:
-                self.command = input(f"{os.getcwd()} | {self.user} > ")
+                self.command = input(f"{self.user}@{self.pc} | {os.getcwd()} > ")
                 self.base()
                 if self.command == "exit":
                     break
@@ -40,7 +41,7 @@ class Main():
                 except TypeError:
                     print(f"ERROR: Invalid usage of '{command_name}' command.")
             else:
-                print(f"ERROR: No command function defined for \"{command_name}\"")
+                print(f"ERROR: No command function defined for \"{command_name}\".")
         elif self.math_pattern.match(self.command):
             try:
                 result = eval(self.command)
@@ -49,10 +50,12 @@ class Main():
                 print("ERROR: Invalid math operation.")
         elif self.command == "exit":
             pass
-        elif any(c.isspace() for c in self.command) or self.command == "":
-            pass
+        elif not self.command.strip():
+            pass  # No action for empty input (just Enter pressed)
+        elif any(c.isspace() for c in self.command):
+            print(f"ERROR: Invalid command \"{self.command}\".")
         else:
-            print(f"ERROR: No command with name \"{command_name}\"")
+            print(f"ERROR: No command with name \"{command_name}\".")
 
 if __name__ == "__main__":
     main_instance = Main()
