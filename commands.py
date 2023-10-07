@@ -61,3 +61,29 @@ def clear():
 
 def echo(text):
     print(text)
+
+# MKDIR
+
+def mkdir(folder):
+    try:
+        os.mkdir(folder)
+    except FileExistsError:
+        print(f"ERROR: Directory '{folder}' already exists.")
+    except FileNotFoundError:
+        print(f"ERROR: Directory '{folder}' not found.")
+    except PermissionError:
+        print(f"ERROR: Permission denied for directory '{folder}'.")
+    except Exception as e:
+        print(f"ERROR: {e}")
+
+# RMDIR
+
+def rmdir(folder):
+    try:
+        os.rmdir(folder)
+    except FileNotFoundError:
+        print(f"ERROR: Directory '{folder}' not found.")
+    except PermissionError:
+        print(f"ERROR: Permission denied for directory '{folder}'.")
+    except Exception as e:
+        print(f"ERROR: {e}")

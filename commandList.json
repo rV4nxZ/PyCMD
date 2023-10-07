@@ -4,5 +4,7 @@
     "cd": "cd",
     "clear": "clear",
     "cls": "clear",
-    "echo": "echo"
+    "echo": "echo",
+    "mkdir": "mkdir",
+    "rmdir": "rmdir"
 }
