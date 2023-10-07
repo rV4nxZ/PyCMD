@@ -3,5 +3,6 @@
     "ls": "ls",
     "cd": "cd",
     "clear": "clear",
-    "cls": "clear"
+    "cls": "clear",
+    "echo": "echo"
 }

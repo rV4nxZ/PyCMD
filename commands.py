@@ -56,3 +56,8 @@ readline.set_completer(complete_cd)
 
 def clear():
     os.system("cls")
+
+# ECHO
+
+def echo(text):
+    print(text)
