@@ -1,2 +1,2 @@
-# Python Command Line For Console
-good
+# Python CMD but with few commands
+currently uncontinued until further notice
