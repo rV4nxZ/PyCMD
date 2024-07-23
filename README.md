@@ -1,2 +1,2 @@
-# Python CMD but with few commands
+# Python CLI but with few commands
 currently discontinued until idk :/
